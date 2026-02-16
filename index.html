@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Adam Bartosz">
+    <meta name="robots" content="index, follow">
+    <title>Witryna o Position oraz anchor</title>
+    <link href="style/style.css" rel="stylesheet">
+    <style>
+        #a {
+            min-height: 49vh;
+            background-image: url("img/Position.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="h1">Position</h1>
+    <div class="main">
+        <nav>
+            <ul>
+                <li class="texto"><a href="#start">Strona główna</a></li>
+                <li class="texto ma"><a href="#wstep">Wstęp</a>
+                    <ul>
+                        <li><a href="#wstep">Definicja</a></li>
+                        <li><a href="#wartosci">Wartości</a></li>
+                    </ul>
+                </li>
+                <li class="texto ma">
+                    <a href="#paragrafsta">Static</a>
+                    <ul>
+                        <li><a href="#paragrafsta">Wyjaśnienie</a></li>
+                        <li><a href="#zastosowaniesta">Zastosowania</a></li>
+                    </ul>
+                </li>
+                <li class="texto ma"><a href="#paragrafrel">Relative</a>
+                    <ul>
+                        <li><a href="#paragrafrel">Wyjaśnienie</a></li>
+                        <li><a href="#zastosowanierel">Zastosowania</a></li>
+                    </ul>
+                </li>
+                <li class="texto ma"><a href="#paragrafabs">Absolute</a>
+                    <ul>
+                        <li><a href="#paragrafabs">Wyjaśnienie</a></li>
+                        <li><a href="#zastosowanieabs">Zastosowania</a></li>
+                    </ul>
+                </li>
+                <li class="texto ma"><a href="#paragraffix">Fixed</a>
+                    <ul>
+                        <li><a href="#paragraffix">Wyjaśnienie</a></li>
+                        <li><a href="#zastosowaniefix">Zastosowania</a></li>
+                    </ul>
+                </li>
+                <li class="texto ma"><a href="#paragrafstick">Sticky</a>
+                    <ul>
+                        <li><a href="#paragrafstick">Wyjaśnienie</a></li>
+                        <li><a href="#zastosowaniestick">Zastosowania</a></li>
+                        <li><a href="#loremipsum">"Lorem ipsum"\n (paragraf utworzony na pokaz\n
+                                właściwości)</a></li>
+                    </ul>
+                </li>
+                <li class="texto"><a href="#tabelka">Tabela porównawcza</a></li>
+                <li class="texto ma"><a href="#zindex">Z-index</a>
+                    <ul>
+                        <li><a href="#zindex">Wyjaśnienie</a></li>
+
+                        <li><a href="#zastosowaniezindex">Zastosowania</a></li>
+                        <li><a href="#doswiadczeniazindex">Symulacja</a></li>
+                    </ul>
+                </li>
+                <li class="texto ma"><a href="#quiz">Quiz</a>
+                    <ul>
+                        <li><a href="#q1">Pytanie 1</a></li>
+                        <li><a href="#q2">Pytanie 2</a></li>
+                        <li><a href="#q3">Pytanie 3</a></li>
+                        <li><a href="#q4">Pytanie 4</a></li>
+                        <li><a href="#q5">Pytanie 5</a></li>
+                        <li><a href="#q6">Pytanie 6</a></li>
+                        <li><a href="#q7">Pytanie 7</a></li>
+                        <li><a href="#q8">Pytanie 8</a></li>
+                        <li><a href="#q9">Pytanie 9</a></li>
+                        <li><a href="#q10">Pytanie 10</a></li>
+                        <li><a href="#q11">Pytanie 11</a></li>
+                        <li><a href="#q12">Pytanie 12</a></li>
+                        <li><a href="#q13">Pytanie 13</a></li>
+                        <li><a href="#q14">Pytanie 14</a></li>
+                        <li><a href="#q15">Pytanie 15</a></li>
+                        <li><a href="#q16">Pytanie 16</a></li>
+                        <li><a href="#q17">Pytanie 17</a></li>
+                        <li><a href="#q18">Pytanie 18</a></li>
+                        <li><a href="#q19">Pytanie 19</a></li>
+                        <li><a href="#q20">Pytanie 20</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="paragrafy">
+            <div class="Paragraph text" style="text-align: center">
+                <h1 id="start">Position w CSS3</h1>
+            </div>
+            <div class="Paragraph text" style="height: 49vh;" id="a"></div>
+            <div class="Paragraph text">
+                <p style="font-weight: bold;">
+                    Strona została stworzona w celu ukazania i przedstawienia wartości i użytkowania właściwości
+                    position, oraz z-index. Znajdziesz tu opisy, przykłady oraz quiz sprawdzający
+                    wiedzę.
+                </p>
+            </div>
+            <div class="Paragraph text" id="wstep">Co to jest Position?<br>Position to właściwość w CSS, która
+                kontroluje
+                rozmieszenie obiektów na stronie.</div>
+            <div class="Paragraph text" id="wartosci">Wartości<br>Position przyjmuje nastepujące wartości:<ol>
+                    <li>Static</li>
+                    <li>Relative</li>
+                    <li>Absolute</li>
+                    <li>Fixed</li>
+                    <li>Sticky</li>
+                </ol>
+            </div>
+            <div class="Paragraph text" style="position: static" id="paragrafsta">Static<br>Domyślna wartość każdego
+                elementu.<br>
+                Element uczestniczy w normalnym przepływie dokumentu.<br>
+                Nie reaguje na właściwości top, bottom, left, right.<br>
+                Wysokość ustalana na podstawie zawartości, szerokość zajmuje całą dostępną przestrzeń.<br>Ustawia się
+                zgodnie z kolejnością zapisaną w kodzie (idąc od góry)<br>
+                <code><span style="color: green">/*Ten paragraf ma właściwość position: static.<br>Przetestuj, jak się zachowuje przy ustawianiu i zmienianiu wartości właściwości top, bottom, right, left<br><small>(możesz samemu ustawiać wartości)</small>*/</span>
+                <br><br>#paragrafstatic {<br>top: <span contenteditable="true" style="text-decoration: underline;" id="topsta">auto</span>;<br>
+            bottom: <span contenteditable="true" style="text-decoration: underline;" id="botsta">auto</span>;<br>
+        left: <span contenteditable="true" style="text-decoration: underline;" id="lefsta">auto</span>;<br>
+    right: <span contenteditable="true" style="text-decoration: underline;" id="rigsta">auto</span>;<br>}
+                </code>
+                <button onclick="przetestujparpos('sta')"
+                    style="padding: 3px; margin: 3px"><em>Przetestuj</em></button><button onclick="resetujparpos('sta')"
+                    style="padding: 3px; margin: 3px"><em>Resetuj</em></button>
+            </div>
+            <div class="Paragraph text" id="zastosowaniesta">Zastosowanie<br>Position: static używamy, gdy chcemy mieć
+                jakiś element, który
+                wpływa na inne elementy, ale nie jest modyfikowany przez top, bottom itd. <br>Przykładowo, submenu
+                rozwijające się po kliknięciu w strzłakę w na tej stronie mają position: static.</div>
+
+            <div class="Paragraph text" style="position: relative" id="paragrafrel">
+                <div id="kropka"></div>
+                <div id="kreska">➡️</div>Relative<br>Każdy element z
+                position: relative: <br>Uczestniczy w normalnym przepływie strony.<br>
+                Obsługuje właściwości top, bottom, left, right, które są liczone od <span id="lewygornyrog"
+                    style="text-decoration: underline;">lewego-górnego</span> rogu
+                tego obiektu
+                przy
+                domyślnych właściwościach.<br>Wysokość: ustawia się na
+                podstawie zawartości<br>Szerokość: cała dostępna<br>
+                <code><span style="color: green">/*Ten paragraf ma właściwość position: relative.<br>Przetestuj, jak się zachowuje przy ustawianiu i zmienianiu wartości właściwości top, bottom, right, left<br><small>(możesz samemu ustawiać wartości)</small>*/</span>
+                <br><br>#paragrafrelative {<br>top: <span contenteditable="true" style="text-decoration: underline;" id="toprel">auto</span>;<br>
+            bottom: <span contenteditable="true" style="text-decoration: underline;" id="botrel">auto</span>;<br>
+        left: <span contenteditable="true" style="text-decoration: underline;" id="lefrel">auto</span>;<br>
+    right: <span contenteditable="true" style="text-decoration: underline;" id="rigrel">auto</span>;<br>}
+                </code>
+                <button onclick="przetestujparpos('rel')"
+                    style="padding: 3px; margin: 3px"><em>Przetestuj</em></button><button onclick="resetujparpos('rel')"
+                    style="padding: 3px; margin: 3px"><em>Resetuj</em></button>
+            </div>
+            <div class="Paragraph text" id="zastosowanierel">Zastosowanie<br>Position: relative stosujemy, gdy
+                potrzebujemy mieć na stronie
+                obiekt, który można przesuwać, al dalej normalnie się zachowuje względem całej strony (również zostało
+                użyte podczas formatowania menu bocznego).</div>
+            <div class="Paragraph text" id="paragrafabs">
+                <div id="kreska2" style="position: absolute; transform: rotate(250deg); font-size: 30px">↖️</div>
+                <div id="kropka2"></div>
+                Absolute<br>
+                Pozycjonowanie względem najbliższego przodka, który ma position inną niż static; jeśli brak, względem
+                &lt;html> (body).
+
+                Właściwości top oraz left odnoszą się do <span id="lewygornyroga"
+                    style="text-decoration: underline;">lewego-górnego</span> rogu okna przeglądarki<br>
+
+                Wysokość i szerokość można ustawić niezależnie.<br>Nie ma wpływu na pozostałe elementy na stronie.<br>
+
+
+                <code>
+        <span style="color: green">
+            /*Ten paragraf ma <small>(o ile został wciśnięty przycisk)</small> właściwość position: absolute.<br>
+            Przetestuj, jak się zachowuje przy ustawianiu i zmienianiu wartości właściwości top, bottom, right, left<br>
+            <small>(możesz samemu ustawiać wartości)</small>*/
+        </span>
+        <br><br>
+        #paragrafabsolute {<br>
+        top: <span contenteditable="true" style="text-decoration: underline;" id="topabs">auto</span>;<br>
+        bottom: <span contenteditable="true" style="text-decoration: underline;" id="botabs">auto</span>;<br>
+        left: <span contenteditable="true" style="text-decoration: underline;" id="lefabs">auto</span>;<br>
+        right: <span contenteditable="true" style="text-decoration: underline;" id="rigabs">auto</span>;<br>
+        }
+    </code><button onclick="togglepositionabs()" style="padding: 3px; margin: 3px">Włącz/wyłącz position:
+                    absolute</button>
+                <button onclick="przetestujparpos('abs')" style="padding: 3px; margin: 3px"><em>Przetestuj</em></button>
+                <button onclick="resetujparpos('abs')" style="padding: 3px; margin: 3px"><em>Resetuj</em></button>
+            </div>
+            <div class="Paragraph text" id="zastosowanieabs">Zastosowanie<br>Position: absolute stosujemy, gdy chcemy,
+                aby element był
+                niezależny od przepływu dokumentu, np. tooltipy, popupy, obrazy w sliderach.</div>
+
+            <div class="Paragraph text" id="paragraffix">
+                Fixed<br>Element pozycjonowany względem okna przeglądarki.<br>
+
+                Nie przesuwa się podczas scrollowania strony.<br>
+
+                Obsługuje top, bottom, left, right względem okna przeglądarki <br>
+
+                Element nie wpływa na przepływ dokumentu – inne elementy zachowują się tak, jakby go nie było.<br>
+                <code>
+        <span style="color: green">
+            /*Ten paragraf ma właściwość position: fixed.<br>
+            Przetestuj, jak się zachowuje przy ustawianiu i zmienianiu wartości właściwości top, bottom, right, left<br>
+            <small>(możesz samemu ustawiać wartości)</small>*/
+        </span>
+        <br><br>
+        #paragraffixed {<br>
+        top: <span contenteditable="true" style="text-decoration: underline;" id="topfix">auto</span>;<br>
+        bottom: <span contenteditable="true" style="text-decoration: underline;" id="botfix">auto</span>;<br>
+        left: <span contenteditable="true" style="text-decoration: underline;" id="leffix">auto</span>;<br>
+        right: <span contenteditable="true" style="text-decoration: underline;" id="rigfix">auto</span>;<br>
+        }
+    </code><button onclick="togglepositionfix()" style="padding: 3px; margin: 3px">Włącz/wyłącz position:
+                    fixed</button>
+                <button onclick="przetestujparpos('fix')" style="padding: 3px; margin: 3px"><em>Przetestuj</em></button>
+                <button onclick="resetujparpos('fix')" style="padding: 3px; margin: 3px"><em>Resetuj</em></button>
+            </div>
+            <div class="Paragraph text" id="zastosowaniefix">Zastosowanie<br>Position: fixed stosujemy do nagłówków,
+                pasków narzędzi lub
+                przycisków, które mają być zawsze widoczne.</div>
+
+            <div class="Paragraph text" id="paragrafstick">
+                Sticky<br>Element zachowuje się jak 'relative' (czyli ma wszystkie jego cechy) do momentu osiągnięcia
+                określonej pozycji w widoku.<br>
+
+                "Przykleja się" do zdefiniowanego miejsca (najczęściej top) w trakcie przewijania.<br>
+
+                Działa tylko w obrębie swojego rodzica.<br>
+
+                Właściwości: top, bottom, left, right określają punkt przyklejenia.<br>
+                <code>
+        <span style="color: green">
+            /*Ten paragraf ma właściwość position: sticky.<br>
+            Przetestuj, jak się zachowuje przy ustawianiu i zmienianiu wartości top<br>
+            <small>(możesz samemu ustawiać wartości)</small>*/
+        </span>
+        <br><br>
+        #paragrafsticky {<br>
+        top: <span contenteditable="true" style="text-decoration: underline;" id="topstick">0</span>;<br>
+        }
+    </code><button onclick="togglepositionstick()" style="padding: 3px; margin: 3px">Włącz/wyłącz position:
+                    sticky</button>
+                <button onclick="przetestujparpos('stick')"
+                    style="padding: 3px; margin: 3px"><em>Przetestuj</em></button>
+                <button onclick="resetujparpos('stick')" style="padding: 3px; margin: 3px"><em>Resetuj</em></button>
+            </div>
+            <div class="Paragraph text" id="zastosowaniestick">Zastosowanie<br>Position: sticky stosujemy do nagłówków
+                tabel, menu lub
+                elementów, które chcemy mieć widoczne podczas przewijania, ale tylko w obrębie rodzica.</div>
+            <div class="Paragraph text" id="loremipsum">Akapit, który jest po to, żeby można
+                było lepiej zaobserwować właściwość sticky
+                <br>
+                <div style=" width: 70%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nunc ut sem ultricies, congue sem eu, semper
+                    quam. Nulla fermentum, arcu id eleifend maximus, massa lectus bibendum diam, at mattis purus enim a
+                    tortor. Nulla vel mi a felis venenatis ornare scelerisque sit amet tortor. Praesent sagittis, massa
+                    ac
+                    fermentum elementum, metus justo molestie mi, pharetra pretium enim turpis dapibus magna. Proin odio
+                    elit, iaculis sed aliquet vel, egestas sit amet lectus. Pellentesque habitant morbi tristique
+                    senectus
+                    et netus et malesuada fames ac turpis egestas. Aenean faucibus finibus nibh ut maximus. Ut fringilla
+                    maximus leo, et cursus arcu viverra sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit.
+                    Phasellus id aliquet felis. Morbi interdum leo eu nulla auctor aliquet. Vestibulum volutpat quam
+                    bibendum lectus ullamcorper, vitae ultrices nisl interdum. Praesent ac turpis nunc. Suspendisse
+                    placerat, mauris ac elementum porttitor, risus libero imperdiet elit, eu pretium turpis erat at
+                    libero.
+                    Duis sagittis pellentesque massa vel condimentum.
+
+                    Mauris et dui sed turpis tempus pellentesque. Maecenas non malesuada sapien, non iaculis urna. Nulla
+                    sagittis elit nec sapien aliquam, nec blandit elit tempor. Integer ut pellentesque ex. Vivamus
+                    luctus
+                    sed enim sed vestibulum. Donec auctor rhoncus lorem, ac sollicitudin arcu vehicula vel. Aenean
+                    suscipit
+                    convallis dapibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                    mus. In ac eros lectus. Nullam lobortis blandit turpis eu tristique. Nulla placerat non lorem vel
+                    laoreet. Ut bibendum felis non lorem sollicitudin, sed interdum turpis vulputate. Phasellus
+                    imperdiet
+                    massa enim, sed ullamcorper enim blandit consequat.
+
+                    Aenean sodales, nibh et pulvinar fermentum, lacus neque vehicula dolor, ac luctus risus tortor et
+                    elit.
+                    Nam est dolor, elementum sit amet nisi eu, aliquam dignissim nibh. Morbi eu lacus nec lacus accumsan
+                    consequat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                    himenaeos.
+                    Aliquam quam purus, sollicitudin accumsan vestibulum semper, consequat ut risus. Ut ut sem cursus
+                    ante
+                    sagittis tincidunt. Sed risus odio, porttitor id rhoncus eget, vestibulum vel lorem. Aenean commodo
+                    interdum mauris, at viverra arcu ullamcorper vel. Suspendisse ut sollicitudin eros, nec venenatis
+                    lectus. Nunc mollis, est nec interdum mollis, mauris felis gravida turpis, ut ultricies ante nisl
+                    condimentum metus. Suspendisse quam lorem, faucibus luctus quam nec, molestie gravida nisi. Aliquam
+                    venenatis felis ac nisl lacinia, eu tempor orci pharetra. Vivamus porta massa purus, eu pellentesque
+                    enim tristique a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                    mus.
+
+                    Nullam sed mauris quam. Proin eget eleifend ex. Nullam tincidunt blandit velit id volutpat. Aenean
+                    eu
+                    neque vel ipsum fermentum semper. Aliquam accumsan iaculis enim nec iaculis. Donec mollis lacus
+                    justo.
+                    Suspendisse sit amet tellus odio. Donec sem dui, maximus at justo vel, ornare feugiat nulla. Cras
+                    consectetur tristique lectus, eu posuere felis ornare ut. Duis turpis augue, scelerisque nec laoreet
+                    ut,
+                    tempus eleifend purus. Aenean molestie, nisl ut condimentum ultrices, turpis nulla dapibus quam, in
+                    commodo felis libero ac risus. Vivamus congue tempor felis. Praesent nec velit ut nisl condimentum
+                    venenatis in quis lacus. Curabitur quis mauris mattis felis faucibus iaculis.
+
+                    Praesent lobortis metus varius neque ornare, et rutrum elit posuere. Fusce eget scelerisque diam, id
+                    mattis ex. Fusce fermentum rutrum leo, sed ultricies turpis. Donec ut velit bibendum, gravida quam
+                    vitae, posuere lectus. Vestibulum semper leo eget mi egestas, vitae lobortis felis commodo. In sed
+                    est a
+                    tortor placerat vestibulum. Nam posuere non massa rhoncus viverra. Ut elementum, diam in ultricies
+                    pretium, neque orci venenatis augue, ut molestie dui augue eu nulla. Morbi ut mauris eget libero
+                    facilisis scelerisque eget in ex. Quisque posuere et nisi nec tempor. Ut sed magna nisi. Duis
+                    iaculis
+                    sed lectus et cursus. Integer eget convallis lectus. Suspendisse nisi erat, efficitur sit amet
+                    lobortis
+                    vitae, tristique id augue. Curabitur tempus, sapien non gravida accumsan, dolor metus pulvinar
+                    ipsum, eu
+                    consequat sapien augue et lectus. Suspendisse non tristique elit.
+
+                    Nam eleifend auctor facilisis. Cras vestibulum, urna non efficitur mollis, lacus neque fermentum
+                    eros,
+                    ac rhoncus diam massa non nunc. Suspendisse nec leo at massa vulputate suscipit. Integer interdum
+                    dolor
+                    felis, eu commodo felis bibendum nec. Etiam id dictum dui, in mattis mi. Donec a sodales tortor. Sed
+                    fermentum magna vel odio rhoncus iaculis.
+
+                    Pellentesque at placerat enim. Nullam dui justo, ornare vitae eros non, tempor varius lorem. Ut ex
+                    sem,
+                    efficitur ut feugiat vitae, mollis id ligula. Mauris vulputate mattis risus, a tincidunt eros
+                    egestas
+                    ac. Curabitur pulvinar malesuada mi blandit hendrerit. Duis vel dapibus purus. Quisque nulla mi,
+                    pellentesque eget interdum ac, mollis id nibh. Mauris dignissim justo at metus dignissim, quis
+                    suscipit
+                    metus tincidunt. Proin dignissim id leo at lacinia. Vestibulum non neque venenatis, fringilla nibh
+                    sed,
+                    ultrices mauris. Nunc purus lacus, facilisis ut imperdiet quis, vulputate in lorem. Suspendisse
+                    sollicitudin eros at maximus placerat. Nunc dictum non tortor vel tempus. Cras a lacinia tellus.
+                    Curabitur eleifend molestie gravida.
+
+                    Pellentesque mollis, lacus ut convallis semper, turpis ex maximus dui, eget consequat nunc sem eget
+                    purus. Quisque urna odio, varius nec metus vel, pellentesque egestas leo. Suspendisse eget urna
+                    nibh.
+                    Aenean efficitur non sem non facilisis. Quisque placerat vitae dui ac interdum. Vestibulum congue
+                    nulla
+                    eu felis varius vulputate. Ut tempus nisi eget orci malesuada, in pharetra nisi vestibulum. Fusce
+                    quis
+                    sapien vel erat accumsan pharetra lacinia nec orci. Proin rutrum dolor in velit eleifend convallis.
+                    Pellentesque maximus porta tortor sit amet molestie.
+
+                    Vestibulum turpis magna, fringilla at pulvinar id, rhoncus eget lectus. Mauris varius ultricies
+                    augue
+                    luctus bibendum. Praesent velit dui, ultrices eu elit in, lobortis fringilla nibh. Suspendisse velit
+                    quam, mattis in dui imperdiet, pretium gravida dui. Vivamus vehicula ligula mi, vitae commodo risus
+                    feugiat eget. Sed id mattis augue. Maecenas egestas orci at libero tempus tempor. Sed viverra turpis
+                    in
+                    sapien interdum bibendum.
+
+                    Maecenas suscipit magna vitae faucibus fermentum. Donec ut diam sed enim ultricies molestie id quis
+                    nibh. Integer hendrerit, metus interdum porttitor cursus, diam sapien varius metus, ac ultrices
+                    felis
+                    dui non dolor. Vivamus malesuada lobortis augue, in pretium ipsum interdum quis. Donec sagittis
+                    interdum
+                    aliquam. Cras lectus lacus, egestas porttitor sodales vitae, molestie eu elit. Aenean nec laoreet
+                    dolor.
+                    Etiam facilisis tristique augue, ut euismod dolor congue facilisis. Aliquam quis fringilla libero.
+                    Morbi
+                    a blandit arcu, nec hendrerit massa.
+
+                    Ut ac nisi ut enim tincidunt pulvinar. Maecenas tempor libero vel purus convallis, a hendrerit orci
+                    aliquet. Maecenas aliquet fringilla magna ut cursus. Donec pharetra dapibus elit, quis maximus ex
+                    efficitur mollis. Vestibulum dignissim, risus sit amet cursus rutrum, nulla ipsum commodo est, in
+                    semper
+                    nisl dolor quis quam. Mauris odio mauris, imperdiet vel nunc a, aliquam molestie nibh. Morbi quam
+                    erat,
+                    ornare in sodales sit amet, pulvinar eget nulla. Nulla egestas lorem in erat malesuada, ac mattis
+                    turpis
+                    fringilla. Aliquam quis magna sed dui ullamcorper fermentum. Ut ligula mi, ornare id porta sed,
+                    gravida
+                    at est. Maecenas ac nisi pulvinar, tristique est sodales, aliquam orci. Phasellus malesuada mauris
+                    ut
+                    venenatis auctor. Sed molestie eleifend tortor nec gravida. Aenean ultricies blandit risus convallis
+                    dignissim. Nunc at lectus nec urna euismod hendrerit a sit amet dui. Ut ut quam a urna tincidunt
+                    eleifend at ac orci.
+
+                    Praesent accumsan ante at nisi pharetra, id egestas purus aliquet. Phasellus accumsan tortor nec
+                    quam
+                    suscipit dictum. Proin sit amet orci porta, porta lorem non, tempus lorem. Nunc luctus magna justo,
+                    id
+                    scelerisque velit ultrices eget. Suspendisse a lacinia dui. Vestibulum ante ipsum primis in faucibus
+                    orci luctus et ultrices posuere cubilia curae; Integer elementum sed nisi quis fringilla. Maecenas
+                    nulla
+                    sem, rhoncus vel nisi in, placerat condimentum mauris.
+
+                    Praesent vestibulum nisl ut nunc placerat, vitae imperdiet purus placerat. Proin consequat, erat et
+                    venenatis molestie, nisi nunc ultricies odio, id lacinia mi leo ac ipsum. Quisque sagittis, odio a
+                    interdum volutpat, urna leo mollis est, in placerat mauris orci et ipsum. Sed tristique elementum
+                    purus
+                    in aliquet. In pretium, elit nec consectetur tempor, dolor turpis ultrices leo, in porttitor diam
+                    nulla
+                    ac neque. In lorem nibh, convallis ac porta et, commodo sed tellus. Cras scelerisque nisl vitae
+                    nulla
+                    vestibulum sollicitudin.
+
+                    Pellentesque auctor faucibus nisl. Vivamus ut convallis nisi. Maecenas ac vulputate justo. Duis vel
+                    suscipit felis. In commodo ipsum vel justo lobortis ornare sed a ligula. Phasellus finibus tincidunt
+                    leo
+                    nec mollis. Nulla ac eleifend ligula. Fusce eu eleifend magna. Vestibulum ante ipsum primis in
+                    faucibus
+                    orci luctus et ultrices posuere cubilia curae; Proin vel sem mauris. Sed at convallis nulla. Nunc
+                    tincidunt pellentesque ante.
+
+                    Duis hendrerit, lectus et congue vulputate, eros libero suscipit enim, non fermentum urna dolor eget
+                    sapien. Aliquam commodo neque auctor, congue magna vel, ultrices ligula. In massa dui, hendrerit non
+                    nulla vel, sagittis gravida orci. Nullam diam purus, dictum vitae volutpat eu, egestas et felis.
+                    Proin
+                    vel velit elit. Proin lobortis urna purus, sed fermentum nulla euismod ac. Ut ornare dignissim nibh
+                    ut
+                    rhoncus. Suspendisse potenti. Duis ac aliquet tellus. Vivamus pharetra sapien ac est tempor, sed
+                    vulputate odio tempor.
+
+                    Fusce porttitor, nisl pharetra gravida dignissim, nibh ante mattis enim, id iaculis urna eros vitae
+                    felis. Proin finibus metus vel odio pharetra egestas at id mi. Donec eros nulla, mollis ac enim at,
+                    consequat blandit nulla. Nunc imperdiet ex sed erat mollis, at scelerisque magna dictum. Curabitur
+                    sagittis eros id risus faucibus, at aliquam nibh bibendum. Aliquam a mi mattis, malesuada tellus a,
+                    interdum leo. Phasellus viverra tortor viverra, semper ipsum quis, accumsan metus. Maecenas et
+                    congue
+                    lorem. Sed nec blandit orci, ut porta eros.
+
+                    In ac justo ligula. Aliquam quis tellus et leo luctus maximus eu sed urna. Etiam eu lorem lorem.
+                    Donec
+                    eu commodo arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                    turpis
+                    egestas. Nam et tristique mauris. Mauris at tellus vel ex tempor dignissim ac euismod erat. Aenean
+                    eget
+                    pellentesque mi. Aenean quis massa id justo dignissim condimentum. Donec quam nibh, convallis nec
+                    accumsan quis, lobortis eu ex. Proin semper metus ultrices, scelerisque mauris at, vulputate nisi.
+                    Suspendisse id semper massa. Suspendisse potenti.
+
+                    Nunc nec semper lectus, eu eleifend elit. Curabitur ut tortor nisl. Pellentesque habitant morbi
+                    tristique senectus et netus et malesuada fames ac turpis egestas. In purus felis, sollicitudin id
+                    sodales ut, congue sit amet ex. Maecenas a risus id ligula consectetur lacinia. Duis sit amet ornare
+                    tortor. Etiam placerat aliquam libero, quis elementum tellus tempus id. Vivamus vulputate venenatis
+                    malesuada. Suspendisse nec faucibus augue. Fusce posuere ex a placerat fringilla. Morbi vel
+                    venenatis
+                    nunc, non venenatis elit. Nulla vitae elit nec velit faucibus imperdiet. Vestibulum vitae quam ac
+                    neque
+                    semper elementum ac ut nisi. In hac habitasse platea dictumst. Maecenas condimentum pulvinar orci,
+                    quis
+                    tempor arcu auctor in. Cras id bibendum est.
+
+                    Nunc accumsan id sapien ut fringilla. Nunc auctor leo non justo ultricies dignissim. Etiam id nunc
+                    eget
+                    ex sollicitudin vulputate a ut ante. Suspendisse orci lectus, molestie a ante eget, luctus placerat
+                    tortor. Morbi quis sapien enim. Donec ex nisl, ultricies id nisl nec, venenatis vulputate augue.
+                    Donec
+                    consectetur imperdiet diam, non elementum orci laoreet vitae. Proin in dolor nec odio pellentesque
+                    pellentesque. Cras luctus vulputate tincidunt. Morbi euismod diam quis gravida suscipit.
+
+                    Vestibulum rhoncus vel leo sed dictum. Morbi vel elementum elit. Nunc aliquet turpis mi, ac porta
+                    libero
+                    sagittis eu. Sed auctor a dui id pharetra. Vestibulum a venenatis diam. Donec placerat, risus in
+                    rutrum
+                    sollicitudin, magna tortor varius elit, vel rhoncus dolor nisi sed lorem. Fusce id nisi in diam
+                    consectetur viverra eu vel nisl.</div>
+            </div>
+            <div class="Paragraph text" id="tabelka">
+                <h2>Porównanie wartości position</h2>
+                <table style="width:100%; text-align:center; border-collapse: collapse;">
+                    <tr>
+                        <th>Wartość</th>
+                        <th>Przepływ strony</th>
+                        <th>Obsługa top/right/bottom/left</th>
+                        <th>Przykładowe zastosowanie</th>
+                    </tr>
+                    <tr>
+                        <td>static</td>
+                        <td>Tak</td>
+                        <td>Nie</td>
+                        <td>Domyślne elementy, np. paragrafy</td>
+                    </tr>
+                    <tr>
+                        <td>relative</td>
+                        <td>Tak</td>
+                        <td>Tak (przesuwa względem pierwotnej pozycji)</td>
+                        <td>Delikatne przesunięcia, np. ikony w menu</td>
+                    </tr>
+                    <tr>
+                        <td>absolute</td>
+                        <td>Nie</td>
+                        <td>Tak (względem najbliższego przodka z innym niż static)</td>
+                        <td>Tooltipy, popupy, elementy w sliderach</td>
+                    </tr>
+                    <tr>
+                        <td>fixed</td>
+                        <td>Nie</td>
+                        <td>Tak (względem okna przeglądarki)</td>
+                        <td>Nagłówki, przyciski zawsze widoczne</td>
+                    </tr>
+                    <tr>
+                        <td>sticky</td>
+                        <td>Tak do momentu przyklejenia</td>
+                        <td>Tak (przykleja się do określonej pozycji)</td>
+                        <td>Menu lub nagłówki przy przewijaniu</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="Paragraph text" id="zindex">
+                Właściwość z-index<br>
+
+                z-index określa, który element jest „na wierzchu” w osi Z. Działa tylko na
+                elementach, które mają
+                position różne od static (czyli relative, absolute, fixed, sticky).
+                Wyższa wartość z-index oznacza, że element będzie nad elementami z niższym
+                z-index.
+
+            </div>
+
+            <div class="Paragraph text" id="zastosowaniezindex">
+                Zastosowanie z-index: <br>
+                <ol style="width: 100%;">
+                    <li style="width: 100%;">Tworzenie nakładających się paneli i modalnych okien.</li>
+                    <li style="width: 100%;">Menu rozwijane nad innymi elementami strony.</li>
+                    <li style="width: 100%;">Tooltipy i dymki informacyjne.</li>
+                    <li style="width: 100%;">Efekty warstw w grach lub interaktywnych animacjach.</li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="doswiadczeniazindex">
+                <h2>Interaktywny przykład z-index</h2>
+                <p>Zmień liczby, aby przetestować różne zachowanie z-indexów elementów:</p>
+                <div
+                    style="position: relative; height: 200px; background: var(--bg-main); border: 1px solid var(--border-paragraph);">
+                    <div id="box1"
+                        style="position: absolute; top: 30px; left: 30px; width: 100px; height: 100px; background: var(--box1); z-index: 1;">
+                        BOX 1
+                    </div>
+                    <div id="box2"
+                        style="position: absolute; top: 60px; left: 60px; width: 100px; height: 100px; background: var(--box2); z-index: 2;">
+                        BOX 2
+                    </div>
+                    <div id="box3"
+                        style="position: absolute; top: 90px; left: 90px; width: 100px; height: 100px; background: var(--box3); z-index: 3; color: var(--h1-color)">
+                        BOX 3
+                    </div>
+                </div>
+                <label>Box1 z-index: <input type="number" id="z1" value="1"></label>
+                <label>Box2 z-index: <input type="number" id="z2" value="2"></label>
+                <label>Box3 z-index: <input type="number" id="z3" value="3"></label>
+            </div>
+            <div class="Paragraph text" id="quiz">Pytania sprawdzające do działu position i z-index</div>
+            <div class="Paragraph text" id="q1">Pytanie 1<br>Kiedy element z <em>absolute</em> będzie liczony względem
+                <em>body</em>?
+                <ol>
+                    <li><input type="radio" name="p1" required value="1" id="p11"><label for="p11">Gdy żaden rodzic nie
+                            ma ustawionego <em>position</em> innego niż <em>static</em></label></li>
+                    <li><input type="radio" name="p1" required value="0" id="p12"><label for="p12">Gdy rodzic ma
+                            <em>overflow: hidden</em></label></li>
+                    <li><input type="radio" name="p1" required value="0" id="p13"><label for="p13">Gdy rodzic ma
+                            <em>display: flex</em></label></li>
+                    <li><input type="radio" name="p1" required value="0" id="p14"><label for="p14">Gdy element ma
+                            <em>z-index</em> większy niż 0</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q2">Pytanie 2<br>Co się stanie z elementem <em>absolute</em>, gdy usuniesz
+                wszystkie wartości <em>top/left/right/bottom</em>?
+                <ol>
+                    <li><input type="radio" name="p2" required value="0" id="p21"><label for="p21">Przesunie się do
+                            lewego górnego rogu</label></li>
+                    <li><input type="radio" name="p2" required value="1" id="p22"><label for="p22">Pozostanie w miejscu,
+                            gdzie normalnie by był w dokumencie</label></li>
+                    <li><input type="radio" name="p2" required value="0" id="p23"><label for="p23">Zniknie z
+                            widoku</label></li>
+                    <li><input type="radio" name="p2" required value="0" id="p24"><label for="p24">Przyjmie wartości
+                            auto i przesunie się w lewo</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q3">Pytanie 3<br>Dlaczego często ustawia się <em>relative</em> na kontener?
+                <ol>
+                    <li><input type="radio" name="p3" required value="1" id="p31"><label for="p31">Żeby elementy
+                            <em>absolute</em> wewnątrz pozycjonowały się względem niego</label></li>
+                    <li><input type="radio" name="p3" required value="0" id="p32"><label for="p32">Żeby zwiększyć
+                            wysokość kontenera</label></li>
+                    <li><input type="radio" name="p3" required value="0" id="p33"><label for="p33">Żeby element był
+                            zawsze na wierzchu</label></li>
+                    <li><input type="radio" name="p3" required value="0" id="p34"><label for="p34">Żeby zmienić kolory
+                            dzieci</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q4">Pytanie 4<br>Co robi <em>fixed</em>?
+                <ol>
+                    <li><input type="radio" name="p4" required value="0" id="p41"><label for="p41">Przykleja element do
+                            rodzica</label></li>
+                    <li><input type="radio" name="p4" required value="0" id="p42"><label for="p42">Zmienia kolor
+                            elementu</label></li>
+                    <li><input type="radio" name="p4" required value="1" id="p43"><label for="p43">Przykleja element do
+                            widoku okna przeglądarki</label></li>
+                    <li><input type="radio" name="p4" required value="0" id="p44"><label for="p44">Przesuwa element
+                            zgodnie ze scrollowaniem</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q5">Pytanie 5<br>Do czego służy <em>sticky</em>?
+                <ol>
+                    <li><input type="radio" name="p5" required value="0" id="p51"><label for="p51">Zawsze przykleja
+                            element na górze dokumentu</label></li>
+                    <li><input type="radio" name="p5" required value="1" id="p52"><label for="p52">Element przykleja się
+                            dopiero po przewinięciu do niego</label></li>
+                    <li><input type="radio" name="p5" required value="0" id="p53"><label for="p53">Zastępuje
+                            <em>absolute</em></label></li>
+                    <li><input type="radio" name="p5" required value="0" id="p54"><label for="p54">Działa tylko w flex
+                            container</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q6">Pytanie 6<br>Które właściwości współpracują z <em>position</em>?
+                <ol>
+                    <li><input type="radio" name="p6" required value="1" id="p61"><label for="p61">top, left, right,
+                            bottom</label></li>
+                    <li><input type="radio" name="p6" required value="0" id="p62"><label for="p62">font-size,
+                            color</label></li>
+                    <li><input type="radio" name="p6" required value="0" id="p63"><label for="p63">border-radius,
+                            padding</label></li>
+                    <li><input type="radio" name="p6" required value="0" id="p64"><label for="p64">text-align,
+                            line-height</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q7">Pytanie 7<br>Co oznacza większy <em>z-index</em>?
+                <ol>
+                    <li><input type="radio" name="p7" required value="0" id="p71"><label for="p71">Element jest bardziej
+                            przezroczysty</label></li>
+                    <li><input type="radio" name="p7" required value="0" id="p72"><label for="p72">Element jest niżej w
+                            stacku</label></li>
+                    <li><input type="radio" name="p7" required value="1" id="p73"><label for="p73">Element jest wyżej
+                            względem innych elementów</label></li>
+                    <li><input type="radio" name="p7" required value="0" id="p74"><label for="p74">Element zmienia kolor
+                            tła</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q8">Pytanie 8<br>Czy <em>z-index</em> działa bez ustawienia
+                <em>position</em>?
+                <ol>
+                    <li><input type="radio" name="p8" required value="1" id="p81"><label for="p81">Nie, tylko na
+                            elementach pozycjonowanych</label></li>
+                    <li><input type="radio" name="p8" required value="0" id="p82"><label for="p82">Tak, zawsze</label>
+                    </li>
+                    <li><input type="radio" name="p8" required value="0" id="p83"><label for="p83">Działa tylko dla flex
+                            itemów</label></li>
+                    <li><input type="radio" name="p8" required value="0" id="p84"><label for="p84">Działa tylko dla
+                            elementów inline</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q9">Pytanie 9<br>Co się stanie, gdy dwa elementy mają ten sam
+                <em>z-index</em>?
+                <ol>
+                    <li><input type="radio" name="p9" required value="0" id="p91"><label for="p91">Ten z większą
+                            szerokością będzie wyżej</label></li>
+                    <li><input type="radio" name="p9" required value="1" id="p92"><label for="p92">Kolejność decyduje
+                            HTML – element późniejszy jest na wierzchu</label></li>
+                    <li><input type="radio" name="p9" required value="0" id="p93"><label for="p93">Przypadkowo jeden
+                            znika</label></li>
+                    <li><input type="radio" name="p9" required value="0" id="p94"><label for="p94">Oba elementy
+                            zmieniają kolor</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q10">Pytanie 10<br>Minimalna wartość <em>z-index</em> to:
+                <ol>
+                    <li><input type="radio" name="p10" required value="1" id="p101"><label for="p101">Może być
+                            ujemna</label></li>
+                    <li><input type="radio" name="p10" required value="0" id="p102"><label for="p102">Tylko
+                            dodatnia</label></li>
+                    <li><input type="radio" name="p10" required value="0" id="p103"><label for="p103">0</label></li>
+                    <li><input type="radio" name="p10" required value="0" id="p104"><label for="p104">1</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q11">Pytanie 11<br>Która wartość <em>position</em> NIE istnieje?
+                <ol>
+                    <li><input type="radio" name="p11" required value="0" id="p111"><label for="p111">absolute</label>
+                    </li>
+                    <li><input type="radio" name="p11" required value="1" id="p112"><label for="p112">center</label>
+                    </li>
+                    <li><input type="radio" name="p11" required value="0" id="p113"><label for="p113">relative</label>
+                    </li>
+                    <li><input type="radio" name="p11" required value="0" id="p114"><label for="p114">fixed</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q12">Pytanie 12<br>Co oznacza <em>top: 0</em> przy <em>fixed</em>?
+                <ol>
+                    <li><input type="radio" name="p12" required value="1" id="p121"><label for="p121">Element przykleja
+                            się do górnej krawędzi okna</label></li>
+                    <li><input type="radio" name="p12" required value="0" id="p122"><label for="p122">Do góry
+                            dokumentu</label></li>
+                    <li><input type="radio" name="p12" required value="0" id="p123"><label for="p123">Do ostatniego
+                            elementu</label></li>
+                    <li><input type="radio" name="p12" required value="0" id="p124"><label for="p124">Nie działa</label>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q13">Pytanie 13<br>Najczęstsze zastosowanie <em>z-index</em> to:
+                <ol>
+                    <li><input type="radio" name="p13" required value="0" id="p131"><label for="p131">Zmiana
+                            fontu</label></li>
+                    <li><input type="radio" name="p13" required value="1" id="p132"><label for="p132">Menu, modale,
+                            overlay</label></li>
+                    <li><input type="radio" name="p13" required value="0" id="p133"><label for="p133">Zmiana kolorów
+                            tekstu</label></li>
+                    <li><input type="radio" name="p13" required value="0" id="p134"><label for="p134">Tło strony</label>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q14">Pytanie 14<br>Prawda/Fałsz: <em>fixed</em> przewija się razem ze
+                stroną.
+                <ol>
+                    <li><input type="radio" name="p14" required value="0" id="p141"><label for="p141">PRAWDA</label>
+                    </li>
+                    <li><input type="radio" name="p14" required value="1" id="p142"><label for="p142">FAŁSZ</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q15">Pytanie 15<br>Prawda/Fałsz: <em>absolute</em> usuwa element z
+                normalnego flow.
+                <ol>
+                    <li><input type="radio" name="p15" required value="1" id="p151"><label for="p151">PRAWDA</label>
+                    </li>
+                    <li><input type="radio" name="p15" required value="0" id="p152"><label for="p152">FAŁSZ</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q16">Pytanie 16<br>Jaką wartość <em>position</em> należy ustawić, by
+                <em>z-index</em> zadziałał?
+                <ol>
+                    <li><input type="radio" name="p16" required value="0" id="p161"><label for="p161">static</label>
+                    </li>
+                    <li><input type="radio" name="p16" required value="1" id="p162"><label for="p162">relative,
+                            absolute, fixed lub sticky</label></li>
+                    <li><input type="radio" name="p16" required value="0" id="p163"><label for="p163">inline</label>
+                    </li>
+                    <li><input type="radio" name="p16" required value="0" id="p164"><label for="p164">none</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q17">Pytanie 17<br>Co się stanie, gdy element <em>sticky</em> nie ma rodzica
+                o wysokości większej niż viewport?
+                <ol>
+                    <li><input type="radio" name="p17" required value="1" id="p171"><label for="p171">Nie przykleja się,
+                            pozostaje w normalnym flow</label></li>
+                    <li><input type="radio" name="p17" required value="0" id="p172"><label for="p172">Przykleja się na
+                            górze viewport</label></li>
+                    <li><input type="radio" name="p17" required value="0" id="p173"><label for="p173">Zmienia
+                            kolor</label></li>
+                    <li><input type="radio" name="p17" required value="0" id="p174"><label for="p174">Staje się
+                            absolute</label></li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q18">Pytanie 18<br>Jak ustawić element zawsze na wierzchu?
+                <ol>
+                    <li><input type="radio" name="p18" required value="0" id="p181"><label for="p181">position: static;
+                            z-index: 10</label></li>
+                    <li><input type="radio" name="p18" required value="1" id="p182"><label for="p182">position: fixed
+                            lub relative/absolute i wysokie z-index</label></li>
+                    <li><input type="radio" name="p18" required value="0" id="p183"><label for="p183">display: block;
+                            z-index: 1</label></li>
+                    <li><input type="radio" name="p18" required value="0" id="p184"><label for="p184">opacity: 1</label>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="Paragraph text" id="q19">Pytanie 19<br>Prawda/Fałsz: <em>z-index</em> działa też dla elementów
+                inline.
+                <ol>
+                    <li><input type="radio" name="p19" required value="0" id="p191"><label for="p191">PRAWDA</label>
+                    </li>
+                    <li><input type="radio" name="p19" required value="1" id="p192"><label for="p192">FAŁSZ</label></li>
+                </ol>
+            </div>
+            <div class="Paragraph text" id="q20">Pytanie 20<br>Co się stanie, gdy element <em>absolute</em> ma rodzica z
+                <em>relative</em> i <em>z-index</em>: 10, a sam element ma <em>z-index</em>: 5?
+                <ol>
+                    <li><input type="radio" name="p20" required value="0" id="p201"><label for="p201">Będzie wyżej od
+                            rodzica</label></li>
+                    <li><input type="radio" name="p20" required value="1" id="p202"><label for="p202">Będzie widoczny w
+                            obrębie rodzica, ale niżej w stacku niż rodzic</label></li>
+                    <li><input type="radio" name="p20" required value="0" id="p203"><label for="p203">Zniknie
+                            całkowicie</label></li>
+                    <li><input type="radio" name="p20" required value="0" id="p204"><label for="p204">Przyjmie z-index
+                            rodzica automatycznie</label></li>
+                </ol>
+            </div>
+
+
+            <div onclick="policzpunkty(20, 'wynik', 'q', 'p', [
+'Absolute liczy się względem najbliższego pozycjonowanego rodzica',
+'Element pozostaje w miejscu, gdzie normalnie by był w dokumencie',
+'Relative na kontenerze pozwala elementom absolute pozycjonować się względem niego',
+'Fixed przykleja element do okna przeglądarki',
+'Sticky działa dopiero po przewinięciu do niego',
+'Top, left, right i bottom współpracują z elementami pozycjonowanymi',
+'Większy z-index oznacza, że element jest wyżej względem innych',
+'z-index działa tylko dla elementów pozycjonowanych',
+'Kolejność w HTML decyduje, który element jest na wierzchu',
+'Z-index może mieć wartość ujemną',
+'Center nie istnieje jako wartość pozycjonowania',
+'Top: 0 przy fixed przykleja element do góry okna',
+'Z-index najczęściej używa się w menu, modalach i overlayach',
+'Fixed nie przewija się razem ze stroną',
+'Absolute usuwa element z normalnego flow',
+'Z-index działa tylko z elementami relative, absolute, fixed lub sticky',
+'Sticky nie przykleja się, jeśli rodzic jest za mały',
+'Wysoka wartość z-index z odpowiednią pozycją ustawia element zawsze na wierzchu',
+'Z-index nie działa dla elementów inline bez pozycjonowania',
+'Absolute z niższym z-index pojawi się pod innymi elementami w stacku rodzica'
+])" id="wynik" class="Paragraph text" style="width: 30%; margin-left: auto; margin-right: auto; text-align: center; ">
+                Prześlij odpowiedź
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <footer style=" display: flex; flex-direction: row;">
+        <div style="width: 10vw;"></div>
+        <div style="width: 80vw;" id="firstletterfooter">Źródła: <span id="w3"><a
+                    href="https://www.w3schools.com/css/default.asp" target="_blank">w3schools</a></span></div>
+        <div style="display: flex; flex-direction: column; z-index:54;">
+            <div style="display: flex; gap: 5px; justify-content: center; align-items: center;">
+                <button onclick="powieksz()" style="width: 35px; height: 40px; font-weight: bolder;"
+                    id="plus">+</button>
+                <button id="minus" style="width: 35px; height: 40px; font-size: 25px;" onclick="pomniejsz()">-</button>
+                <button onclick="resetuj()" style="width: 35px; height: 40px; font-size: 70%;" id="q">🔁</button>
+                <button id="settingsbutton" onclick="pokazustawienia()">⚙️</button>
+            </div>
+
+            <div id="size" style="font-size: 70%; text-align: center;">
+                Rozmiar<br>czcionki<br>100%
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+    <div id="pasekustawien">
+
+        <h1 class="h1">
+            Ustawienia</h1>
+        <div class="main" id="ustawienia"
+            style="height: calc(100% - 166px - 104px);padding: 20px; margin-left: 0; margin-right: 0; padding: 0; margin-top: 20px">
+            <nav style="margin-top: -20px;">
+                <ul>
+                    <li><a href="#czcionka">Ustawienia czcionki</a></li>
+                    <li><a href="#czescekran">Ustawienia ekranu</a></li>
+                </ul>
+            </nav>
+            <div style="margin-right: 0" class="paragrafy">
+                <div>
+                    <div class="Paragraph usra">
+                        <span class="text" id="czcionka">Czcionka</span><br>
+                        <br>
+                        <label class="w">Zwiększanie rozmiarów czcionki:<sup><small> <span onclick="pokazodsy(1)"
+                                        title="wyświetl informacje">
+                                        1</span></small></sup></label>
+                        <div style="display: grid; 
+  grid-template-columns: 20% 25%;">
+                            <label style="grid-area: 1/1;margin: 10px"><em class="text">zmiana po jednym
+                                    kliknięciu
+                                    (%):</em></label>
+                            <input type="text" class="text" value="5" id="powiekszanie"
+                                style="grid-area: 1/2; margin: 10px;"><button id="resetujvalstep"
+                                style="grid-area: 1/3;  height: calc(100% - 20px); width: 40px; margin: 10px; font-size: 20px; padding: 0"
+                                onclick="resetujvalstep()" title="5%" class="text">🔁</button>
+                            <label style="grid-area: 2/1; margin: 10px"><em class="text">powiększanie
+                                    (%):</em></label>
+                            <input style="grid-area: 2/2; margin: 10px" class="text" value="235" id="pluslimit"
+                                type="text">
+                            <button id="resetujvalpow"
+                                style="grid-area: 2/3;  height: calc(100% - 20px); width: 40px; margin: 10px; font-size: 20px; padding: 0"
+                                onclick="resetujvalpow()" title="235%" class="text">🔁</button>
+                            <label style="grid-area: 3/1; margin: 10px"><em class="text">pomniejszanie
+                                    (%):</em></label>
+                            <input style="grid-area: 3/2; margin: 10px" type="text" value="0" id="miuslimit"
+                                class="text"><button id="resetujvalpom"
+                                style="grid-area: 3/3;  height: calc(100% - 20px); width: 40px; margin: 10px; font-size: 20px; padding: 0"
+                                onclick="resetujvalpom()" title="0%" class="text">🔁</button>
+                            <label style="grid-area: 4/1; margin: 10px"><em class="text">resetowanie
+                                    (%):</em></label>
+                            <input style="grid-area: 4/2; margin: 10px" class="text" value="100" id="resetlimit"
+                                type="text"><button id="resetujvalres"
+                                style="grid-area: 4/3;  height: calc(100% - 20px); width: 40px; margin: 10px; font-size: 20px; padding: 0"
+                                onclick="resetujvalres()" title="100%" class="text">🔁</button>
+                            <label
+                                style="grid-area: 5/1 / 5/3; margin: 10px; text-align: center; text-transform: uppercase;font-size: 16px;"><em
+                                    class="text">
+                                    Resetuj wszystkie limity z powrotem do ustawień początkowych:
+                                </em></label>
+                            <button
+                                style="grid-area: 5/3;  height: calc(100% - 20px); width: 40px; margin: 10px; font-size: 20px; padding-top: 0"
+                                onclick="resetujWszystkieLimity()" title="Resetuj wszystko" class="text">🔁</button>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="Paragraph usra">Ekran<br>
+                    <div id="czescekran">
+                        <label>Tryb ekranu:</label>
+                        <select id="trybekranu">
+                            <option value="normal">Jasny</option>
+                            <option value="dark">Ciemny</option>
+                            <option value="contrast">Wysoki kontrast</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="Paragraph usra">Więcej wkrótce!<br><br><br><br><br><br><br><br></div>
+            </div>
+        </div>
+
+        <footer style="position: absolute; padding-top: 40px; padding-bottom: 10px; height: 148px">WIĘCEJ
+            FUNKCJI
+            JUŻ
+            WKRÓTCE!
+        </footer>
+    </div>
+
+    <script src="script/script.js">    </script>
+</body>
+
+</html>
