@@ -892,9 +892,7 @@ ol li {
 
 html {
     scroll-behavior: smooth;
-    /* płynne przewijanie */
     scroll-padding-top: 80px;
-    /* wysokość h1 + border */
 }
 
 body {
@@ -911,11 +909,10 @@ body {
 
 body {
     overflow-y: auto;
-    /* scroll strony */
 }
 
 section {
     overflow: visible;
-    /* usuń własny scroll */
     max-height: none;
+
 }
